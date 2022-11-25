@@ -28,6 +28,8 @@ function refresh-path
 
 
 '''
+# Ref -> https://stackoverflow.com/a/70576201/9454903
+
 New-Item $profile -Type File -Force
 
 Copy the content of the script to --> C:\Users\{user_name}\Documents\WindowsPowerShell\Microsoft.PowerShell_profile
