@@ -40,16 +40,11 @@ function update_java_version($version, [bool] $everywhere)
     $Env:JAVA_HOME = $java_value
     $Env:JRE_HOME = $jre_value
 	
-
-    if ($everywhere)
-    {
-		# Set System Environment Variable (need Administrative permission to run this)
-        [System.Environment]::SetEnvironmentVariable("JAVA_HOME", $java_value, "Machine")
-        [System.Environment]::SetEnvironmentVariable("JRE_HOME", $jre_value, "Machine")
-    }
-	else {
-		# Set User Environment Variable
-        [System.Environment]::SetEnvironmentVariable("JAVA_HOME", $java_value, "User")
-        [System.Environment]::SetEnvironmentVariable("JRE_HOME", $jre_value, "User")
-	}
+    # Set System Environment Variable (need Administrative permission to run this)
+    [System.Environment]::SetEnvironmentVariable("JAVA_HOME", $java_value, "Machine")
+    [System.Environment]::SetEnvironmentVariable("JRE_HOME", $jre_value, "Machine")
+    
+    # Set User Environment Variable
+    #[System.Environment]::SetEnvironmentVariable("JAVA_HOME", $java_value, "User")
+    #[System.Environment]::SetEnvironmentVariable("JRE_HOME", $jre_value, "User")
 }
